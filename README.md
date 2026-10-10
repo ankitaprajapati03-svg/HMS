@@ -1,4 +1,3 @@
-# HMS
 # 🏥 Hospital Management System (HMS)
 
 A web-based Hospital Management System that digitizes patient registration, doctor management and appointment booking, so patients can skip long hospital queues and administrators can manage everything from one place.
@@ -101,13 +100,8 @@ The system uses a MySQL database with the following main tables:
 - **Patient details**: name, blood group, contact, address
 - **Appointment details**: patient, doctor, date and status
 
-> The ER diagram and Data Flow Diagrams (Level 0 and Level 1) are available in the project report.
-
----
 
 ## 📁 Project Structure
-
-> Adjust this to match your repository layout.
 
 ```
 Hospital-Management-System/
@@ -198,12 +192,9 @@ Hospital-Management-System/
 
 ## 📸 Screenshots
 
-Add your screenshots to the `screenshots/` folder and link them here:
-
 | Page | Preview |
 |------|---------|
 | Home Page | `![Home](screenshots/home.png)` |
-| Admin Login | `![Admin Login](screenshots/admin-login.png)` |
 | Sign Up | `![Sign Up](screenshots/signup.png)` |
 | Patient Dashboard | `![Patient Dashboard](screenshots/patient-dashboard.png)` |
 | Patient Registration | `![Patient Registration](screenshots/patient-registration.png)` |
