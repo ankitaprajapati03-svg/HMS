@@ -116,8 +116,6 @@ Hospital-Management-System/
 │   └── ...
 ├── static/                # CSS, images
 │   └── style1.css
-├── database/
-│   └── hms.sql            # MySQL schema
 ├── screenshots/           # Project screenshots
 ├── requirements.txt
 └── README.md
@@ -192,18 +190,35 @@ Hospital-Management-System/
 
 ## 📸 Screenshots
 
-| Page | Preview |
-|------|---------|
-| Home Page | `![Home](screenshots/home.png)` |
-| Sign Up | `![Sign Up](screenshots/signup.png)` |
-| Patient Dashboard | `![Patient Dashboard](screenshots/patient-dashboard.png)` |
-| Patient Registration | `![Patient Registration](screenshots/patient-registration.png)` |
-| Doctor Dashboard | `![Doctor Dashboard](screenshots/doctor-dashboard.png)` |
-| Doctor Registration | `![Doctor Registration](screenshots/doctor-registration.png)` |
-| Appointment Form | `![Appointment Form](screenshots/appointment-form.png)` |
-| View Appointments / Patients / Doctors | `![View](screenshots/view-records.png)` |
-| Delete Doctors | `![Delete Doctor](screenshots/delete-doctor.png)` |
+### Home Page
+![Home Page](screenshots/homepage.png)
 
+### Sign Up
+![Sign Up](screenshots/signup.png)
+
+### Patient Registration
+![Patient Registration](screenshots/patient_registration.png)
+
+### Doctor Registration
+![Doctor Registration](screenshots/doctor_registration.png)
+
+### Doctor Dashboard
+![Doctor Dashboard](screenshots/doctor_dashboard.png)
+
+### View Appointments
+![View Appointments](screenshots/view_appointment.png)
+
+### View Doctors
+![View Doctors](screenshots/view_doctor.png)
+
+### View Patients
+![View Patients](screenshots/view_patient.png)
+
+### Delete Doctor
+![Delete Doctor](screenshots/delete_doctor.png)
+
+### Delete Patient
+![Delete Patient](screenshots/delete_patient.png)
 ---
 
 ## ✅ Advantages & Limitations
