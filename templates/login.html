@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HMS Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main">
+    <nav class="navbar">
+      <div class="icon">
+        <h2 class="logo">HMS Login</h2>
+      </div>
+
+      <div class="login-section">
+        <form method="POST" action="{{ url_for('login') }}">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+          <button class="btn" type="submit">Login</button>
+          <p class="link">Don't have an account? <a href="{{url_for('sign')}}">Sign up here</a></p>
+        </form>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>

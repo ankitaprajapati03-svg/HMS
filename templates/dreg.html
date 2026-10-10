@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctor Registration</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='9.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 50px;
+        }
+        .container {
+            border: 1px solid #121312dc;
+            border-radius: 8px;
+            padding: 10px;
+            max-width: 450px;
+            margin: 10px auto;
+            background-color: rgba(255, 255, 255, 0.721);
+        }
+        input[type="text"], input[type="date"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #444343;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: 1px solid #444343;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .submit-button {
+            width: 40%;
+            height: auto;
+            background-color:#00b7fff5;
+            color: #090909;
+            cursor: pointer;
+            opacity: 80%;
+        }
+        #popup-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div id="popup-message">
+            {% for message in messages %}
+            <h2>{{ message }}</h2>
+            {% endfor %}
+            <button onclick="closePopup()">Close</button>
+        </div>
+        <script>
+            document.getElementById("popup-message").style.display = "block";
+        </script>
+        {% endif %}
+        {% endwith %}
+        <form id="registration-form" method="POST">
+            <table align="center" cellpadding="5" cellspacing="15">
+                <tr>
+                    <td align="center" colspan="3"><h1><u>Registration</u> <u>Form</u></h1></td>
+                </tr>
+                <tr>
+                    <td><b>Name</b></td>
+                    <td>:-</td>
+                    <td><input type="text" name="name" required placeholder="Enter doctor name"></td>
+                </tr>
+                <tr>
+                    <td><b>Age</b></td>
+                    <td>:-</td>
+                    <td><input type="text" name="age" required placeholder="Enter doctor age"></td>
+                </tr>
+                <tr>
+                    <td><b>Gender</b></td>
+                    <td>:-</td>
+                    <td> Male<input type="radio" name="gender" value="male" required> Female<input type="radio" name="gender" value="female" required> </td>
+                </tr>
+                <tr>
+                    <td><b>Specialized In</b></td>
+                    <td>:-</td>
+                    <td><select name="field" required>
+                        <option>---Select Field---</option>
+                        <option>Cardiologist</option>
+                        <option>Pediatrician</option>
+                        <option>Pyschiatrist</option>
+                        <option>ENT</option>
+                        <option>Ophthalmologiost</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><b>Contact Number</b></td>
+                    <td>:-</td>
+                    <td><input type="text" name="contact" required placeholder="Enter doctor contact number"></td>
+                </tr>
+                <tr>
+                    <td><b>Email</b></td>
+                    <td>:-</td>
+                    <td><input type="email" name="email" required placeholder="Enter doctor email address"></td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="3">
+                        <input type="submit" value="Register Now">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function closePopup() {
+            document.getElementById("popup-message").style.display = "none";
+        }
+    </script>
+</body>
+</html>

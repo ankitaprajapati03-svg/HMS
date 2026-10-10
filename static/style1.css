@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('6.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Adjust width as needed */
+}
+
+.icon {
+    text-align: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF; /* Link color */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3; /* Link hover color */
+}
+
+.login-section {
+    margin-top: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #007BFF; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn a {
+    color: white; /* Link color inside button */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Button hover color */
+}
+
+.link {
+    text-align: center;
+    margin: 10px 0;
+}

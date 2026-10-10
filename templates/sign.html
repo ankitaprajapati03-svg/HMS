@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HMS SignUp</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+  <style>
+      #popup-message {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #ffffff;
+          border: 1px solid #ccc;
+          padding: 20px;
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <nav class="navbar">
+      <div class="icon">
+        <h2 class="logo">HMS Sign up</h2>
+      </div>
+
+      <div class="login-section">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div id="popup-message">
+            {% for message in messages %}
+            <h2>{{ message }}</h2>
+            {% endfor %}
+            <button onclick="closePopup()">Close</button>
+        </div>
+        <script>
+            document.getElementById("popup-message").style.display = "block";
+        </script>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('sign') }}">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="pwd" placeholder="Enter password" required>
+
+          <button class="btn" type="submit">Sign up</button>
+          <p class="link">Click Here For <a href="{{ url_for('login') }}">Login</a></p>
+        </form>
+      </div>
+    </nav>
+  </div>
+  <script>
+    function closePopup() {
+        document.getElementById("popup-message").style.display = "none";
+    }
+  </script>
+</body>
+</html>

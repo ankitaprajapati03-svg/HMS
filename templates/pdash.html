@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='8.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .container {
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #0c0c0c;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background-color: #ffffffc1;
+            padding: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 22%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .box h2 {
+            color: #1b1a1a;
+            margin-bottom: 20px;
+        }
+
+        .box p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .box a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .box a:hover {
+            background-color: #0056b3;
+        }
+        nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+a {
+  color: rgb(16, 16, 16);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('pdash')}}">Patient</a></li>
+                <li><a href="{{url_for('dash')}}">Doctor</a></li>
+                <li><a href="{{ url_for('view_appointments') }}">View Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Header Section -->
+        
+        <div class="header">
+            <h1><u>PATIENT  DASHBOARD</u></h1>
+            <p>Manage Patient's Information and Records</p>
+        </div>
+
+        <!-- Box Container for Add, Delete, View Patient -->
+        <div class="box-container">
+<!-- Add Box -->
+            <div class="box">
+                <h2>Add Patient</h2>
+                <p>Click here to add a new patient to the system.</p>
+                <a href="{{ url_for('preg') }}">Add Patient</a>
+            </div>
+
+            <!-- Delete Box -->
+            <div class="box">
+                <h2>Delete Patient</h2>
+                <p>Click here to delete a patient from the system.</p>
+                <a href="{{ url_for('delete_patient') }}">Delete Patient</a>
+            </div>
+
+            <!-- View Box -->
+            <div class="box">
+                <h2>View Patient</h2>
+                <p>Click here to view the list of all patients in the system.</p>
+                <a href="{{ url_for('view_patients') }}">View Patients</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

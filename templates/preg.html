@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patient Registration Form</title>
+<style>
+body {
+    background-image: url("{{ url_for('static', filename='13.jpg') }}");
+    background-size: cover;
+    background-position: center center;
+    padding: 10px;
+}
+
+.container {
+    border: 1px solid #121312;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 610px;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.785);
+}
+input[type="text"], input[type="date"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div id="popup-message">
+        {% for message in messages %}
+        <h2>{{ message }}</h2>
+        {% endfor %}
+        <button onclick="closePopup()">Close</button>
+    </div>
+    <script>
+        document.getElementById("popup-message").style.display = "block";
+    </script>
+    {% endif %}
+    {% endwith %}
+<form id="registration-form" method="POST">
+<table align="center" cellpadding="5" cellspacing="15">
+<tr>
+<td align="center" colspan="3"><h1><u>Registration</u> <u>Form</u></h1></td>
+</tr>
+<tr>
+<td><b>Name</b></td>
+<td>:-</td>
+<td><input type="text" name="name" required placeholder="Enter your full name"></td>
+</tr>
+<tr>
+<td><b>Age</b></td>
+<td>:-</td>
+<td><input type="text" name="age" required placeholder="Enter your age"></td>
+</tr>
+<tr>
+<td><b>Gender</b></td>
+<td>:-</td>
+<td> Male<input type="radio" name="gender" value="male" required> Female<input type="radio" name="gender" value="female" required> </td>
+</tr>
+<tr>
+<td><b>Height</b> (in cm)</td>
+<td>:-</td>
+<td><input type="text" name="height" required placeholder="Enter your height in centimeters"></td>
+</tr>
+<tr>
+<td><b>Weight</b> (in kgs)</td>
+<td>:-</td>
+<td><input type="text" name="weight" required placeholder="Enter your weight in kilograms"></td>
+</tr>
+<tr>
+<td><b>Contact Number</b></td>
+<td>:-</td>
+<td><input type="text" name="contact" required placeholder="Enter your contact number"></td>
+</tr>
+<tr>
+<td><b>Email</b></td>
+<td>:-</td>
+<td><input type="email" name="email" required placeholder="Enter your email address"></td>
+</tr>
+<tr>
+<td><b>Address</b></td>
+<td>:-</td>
+<td><input type="text" name="address" required placeholder="Enter your address"></td>
+</tr>
+<tr>
+<td><b>Taking any medications currently</b></td>
+<td>:-</td>
+<td> Yes<input type="radio" name="medications" value="yes"> No<input type="radio" name="medications" value="no" required></td>
+</tr>
+<tr>
+     <td align="center" colspan="3">
+    <input type="submit" value="Register Now">
+     </td>
+</tr>
+</table>
+</form>
+</div>
+<div id="popup-message">
+    <h2>Registration Successful!</h2>
+    <p>Your registration has been completed successfully.</p>
+    <button onclick="closePopup()">Close</button>
+</div>
+<script>
+function closePopup() {
+    document.getElementById("popup-message").style.display = "none";
+}
+</script>
+</body>
+</html>

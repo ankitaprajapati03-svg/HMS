@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .about {
+            padding: 1px;
+            background-color: rgb(241, 247, 247);
+        }
+        .services {
+            padding: 50px;
+            background-color: rgba(38, 141, 245, 0.892);
+            opacity: 80%;
+        }
+        header {
+            background-color: rgba(14, 60, 246, 0.892);
+            padding: 20px;
+            opacity: 80%;
+            background-image: url("{{ url_for('static', filename='10.jpg') }}");
+            background-size: cover;
+        }
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .hero {
+            background-image: url("{{ url_for('static', filename='10.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 25px 0;
+            color: rgba(11, 11, 11, 0.863);
+            background-color: rgb(252, 249, 249);
+        }
+        .hero button {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: rgb(16, 16, 16);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(7, 145, 250, 0.788);
+        }
+        .container {
+            display: flex;
+        }
+        .image-container {
+            width: 200px
+        }
+        .text-container {
+            flex: 2;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('pdash') }}">Patient</a></li>
+                <li><a href="{{ url_for('dash') }}">Doctor</a></li>
+                <li><a href="{{ url_for('view_appointments') }}">View Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 align="center">We Provide High<br>
+                Solutions for Your <br>
+                Health
+            </h1>
+            <a href="{{ url_for('appoint') }}">
+                <button>Book Appointment</button>
+            </a>
+        </section>
+        <section class="about">
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='11.jpg') }}" width="200" height="150" border="2">
+                </div>
+                <div class="text-container">
+                    <h2>"Your Health Our Priority"<br><br>
+                        "Healing Hands, Caring Heart"</h2>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+        </section>
+    </main>
+
+    <footer>
+        <p><u>Contact US</u> : 9563485125</p>
+    </footer>
+</body>
+</html>
